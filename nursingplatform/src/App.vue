@@ -3,7 +3,7 @@
     <header class="app-header">
       <div class="app-header-left">
         <span><i class="fa icon-icon1_nav"></i> <span>智能护理</span></span>
-        <span>首页</span>
+        <span>{{headmenu}}</span>
         <span>{{headText}}</span>
       </div>
       <div class="app-header-right">
@@ -25,11 +25,13 @@
 
 <script>
 import tab from './components/tab/tab.vue'
+import Bscroll from 'better-scroll'
 export default {
   name: 'App',
   data () {
     return {
       headText: '< 未登录 >',
+      headmenu: '首页',
       tabdisplay:false
     }
   },
@@ -45,6 +47,15 @@ export default {
      }
      console.log(this.tabdisplay)
     }
+  },
+  mounted () {
+    var that  = this
+     this.$nextTick(() => {
+        this.scroll = new Bscroll(this.$refs.rightTab, {click: true})
+      })
+      window.onresize = function () {
+        that.scroll = new Bscroll(that.$refs.rightTab, {click: true})
+      }
   }
 }
 </script>
@@ -61,6 +72,8 @@ export default {
 #app>.content{
   flex: 1;
   /* background:red; */
+  padding: 8px 16px;
+  position: relative;
 }
 .app-header{
   display: flex;
@@ -148,11 +161,10 @@ footer button.fa:focus{
   bottom: 40px;
   transition: all 0.75s ease;
   width: 0;
-    right:0;
-    overflow: hidden;
-    background: grey;
-  
- 
+  right:0;
+  overflow: hidden;
+  background-color: #fafafa;
+  border-left: 1px solid #d4d4d4;
 }
 .right-tab[data-display='false'] {
    /* display: none; */

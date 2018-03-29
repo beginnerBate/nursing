@@ -3,11 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import './assets/css/reset.css'
 import './assets/css/icomoon.css'
 import 'font-awesome/css/font-awesome.css'
 Vue.config.productionTip = false
 
+Vue.use(VueAxios, axios)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
