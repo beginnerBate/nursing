@@ -3,7 +3,7 @@
     <header class="app-header">
       <div class="app-header-left">
         <span><i class="fa icon-icon1_nav"></i> <span>智能护理</span></span>
-        <span>{{headmenu}}</span>
+        <span>{{$store.state.headmenu}}</span>
         <span>{{headText}}</span>
       </div>
       <div class="app-header-right">
@@ -12,7 +12,7 @@
       </div>
     </header>
     <div class="content">
-      <router-view/>
+      <router-view></router-view>
     </div>
     <footer>
      <button class="fa fa-navicon " @click="displayTab()"></button>
@@ -31,12 +31,15 @@ export default {
   data () {
     return {
       headText: '< 未登录 >',
-      headmenu: '首页',
+      // headmenu: '首页',
       tabdisplay:false
     }
   },
   components:{
     tab
+  },
+  created(){
+    this.$store.commit('changeheadmenu','首页')
   },
   methods: {
     displayTab() {
@@ -56,7 +59,9 @@ export default {
       window.onresize = function () {
         that.scroll = new Bscroll(that.$refs.rightTab, {click: true})
       }
+      
   }
+  
 }
 </script>
 <style>

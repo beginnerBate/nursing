@@ -1,5 +1,6 @@
 <template>
   <div  class="res" ref="reswrapper">
+      <div>dd</div>
       <ul class="reswrapper" :data-isLoading = 'isLoading'>
           <li v-for="(item,index) in resdata" :key="index" class="item">
               <div class="item-title">
@@ -65,24 +66,37 @@ import Bscroll from 'better-scroll'
 export default {
     data () {
         return {
-            resdata: '',
+            resdata: null,
+            error: null,
             isLoading: false
         }
     },
     created () {
-       //  请求数据
-       var that = this;
-       this.axios.get('static/ajax.json').then((response) => {
-            that.resdata = response.data.businessInfo.rows
-            console.log(that.resdata)
-            that.isLoading = true
-      })
-
+        //  组件创建完成后获取数据，
+        //  此时data已经被observed了
+        this.fetchData()
+    },
+    watch:{
+        //如果路由有变化，会再次执行该方法
+        '$route': 'fetchData'
     },
     mounted () {
         this.$nextTick(()=> {
             this.Bscroll = new Bscroll(this.$refs.reswrapper,{click:true})
         })
+    },
+    methods: {
+        fetchData () {
+           this.error = this.post = null
+           this.loading = true
+            //  请求数据
+            var that = this;
+            this.axios.get('static/ajax.json').then((response) => {
+                that.resdata = response.data.businessInfo.rows
+            }, (err) => {
+                this.error = err.toString()
+            })
+        }
     }
 }
 </script>

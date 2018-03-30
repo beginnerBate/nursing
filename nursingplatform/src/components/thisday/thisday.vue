@@ -51,23 +51,26 @@ import changebedinfo from 'components/changebedinfo/changebedinfo.vue'
 import memo from 'components/memo/memo.vue'
 import Bscroll from 'better-scroll'
 export default {
-  components: {
-      keyproject,
-      specialproject,
-      medicalpermanence,
-      nursingpermanence,
-      worktips,
-      itemsborrowed,
-      changebedinfo,
-      memo
-  },
-  mounted () {
-    this.$nextTick(() => {
-      this.scroll = new Bscroll(this.$refs.thisdayrightwrapper, {
-          click:true
-      })
-    })
-  } 
+    created () {
+        this.$store.commit('changeheadmenu','首页')
+    },
+    components: {
+        keyproject,
+        specialproject,
+        medicalpermanence,
+        nursingpermanence,
+        worktips,
+        itemsborrowed,
+        changebedinfo,
+        memo
+    },
+    mounted () {
+        this.$nextTick(() => {
+        this.scroll = new Bscroll(this.$refs.thisdayrightwrapper, {
+            click:true
+        })
+        })
+    } 
 }
 </script>
 

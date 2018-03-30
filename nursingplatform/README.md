@@ -26,6 +26,30 @@
 
       Vue.use(VueAxios, axios)
 ```
+5. 配置vuex 
+```
+  1. 安装vuex npm install vuex --save
+  2. 新建store文件夹 并且在文件夹里面新建一个store.js 并且在里面引入 vue 和vuex 
+      ##  import Vue from 'vue'
+      ##  import Vuex from 'vuex'
+      ##  Vue.use(Vuex)
+  3. 在main.js文件夹里面引用
+      ##  import store from './store' 
+      ##   new Vue({
+      ##    el: '#app',
+      ##    router,
+      ##    store,
+            render: h => h(App)
+          })
+```
+6. 路由配置 router
+```
+
+```
+7. 基础组件搭建
+```
+  1. 弹出框组件搭建 alert.vue
+```
 ## 页面搭建
 1. 今日概况---thisday  路由: thisday  
 ```
@@ -44,11 +68,16 @@
 3. better-scroll 滚动 的时候高度获取问题 
 ```
 2. 责任医护--responsibility
-  使用vue-axios 获取静态数据
 ```
-需求分析：页面需要滚动 使用better-scroll 插件
-
+  需求分析:
+  1.一级页面医生负责住院病人的可折叠列表
 ```
+## 路由配置
+  > 首页路由配置 默认到今日详情
+  > 使用vuex 存首页
+  ###   相关问题：
+  1. vue-router 切换的是组件没有加载到router-view 里面 原因找到了是命名的问题 路径命名不能太长否则没有反应 （大大的坑）好难受啊 呜呜 (路由把我搞蒙掉了 我好难受啊特别难受）
+  2. better-scroll 突然没有初始化问题 better-scroll 只能绑定第一个元素，之前有loading 所以失败了 在考虑要不要把scroll封装起来 
 > A Vue.js project
 
 ## Build Setup

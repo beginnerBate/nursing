@@ -22,12 +22,12 @@
           {
             name: '责任医护',
             icon:'icon-menu_zryh',
-            urlLink: '/responsibility '
+            urlLink: '/zryh'
           },
           {
             name: '输液管理',
             icon: 'icon_sy',
-            urlLink: '/transfusion'
+            urlLink: '/sy'
           },
           {
             name: '皮试提醒',
@@ -62,7 +62,7 @@
           {
             name: '病区排班',
             icon: 'icon-menu_bqpb',
-            urlLink: '/scheduling'
+            urlLink: '/pb'
           }
         ]
       }
