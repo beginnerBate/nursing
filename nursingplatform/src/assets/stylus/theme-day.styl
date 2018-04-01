@@ -1,0 +1,48 @@
+@import './var-day.styl'
+
+  .theme-day
+    // background: $header-bg
+    .app-header
+      background: $header-bg
+      color: $header-c
+    .app-header-right>span
+      background-color: $btn-bg
+      border-color: $btn-bg
+      i 
+        color: $btn-logout-c
+      &:last-child>i 
+          color: $btn-skin-c
+      &:hover
+          background-color: $btn-bg-hover
+    .thisdayrightwrapper,.spcontent-list-wrapper
+      box-shadow: 1px 1px 5px $box-shadow-c
+    .kp,.right-item
+      box-shadow: 1px 1px 7px $box-shadow-c-d
+    .kpheader, .spheader,.right-item-head
+      color: $kph-c
+      text-shadow: 1px 1px 5px $kph-text-shadow-c
+      background: $bg-d
+      background: linear-gradient(to top,$bg-liner-s,$bg-liner-e)
+    .kpcontent-list li,.spcontent-list li
+      background-color: $li-bg-first
+      color: $li-c
+    .kpcontent-list li:nth-of-type(2n+1),.spcontent-list li:nth-of-type(2n+1)
+      background-color: $li-bg-second
+    .kpcontent-list li span.name
+      color: $li-name-c
+      background: $li-name-bg
+    .kpcontent-list li span.count i,.spcontent-list li span.count i
+      color:$li-count-c
+    .kpcontent-list li span.mydata i,.spcontent-list li span.mydata i
+      color: $li-mydata-c
+    .kpfooter ul li 
+      color: $f-c
+      background-color: $f-bg
+      box-shadow: 0px -1px 4px $f-text-shadow
+    .kpfooter ul li:hover
+      background-color: $f-li-hover
+    .kpfooter ul li.active
+      color: $f-li-active-c
+      background-color:  $f-li-active-bg
+    .spcontent-list-wrapper:last-child
+      border-left: 1px solid $border-c

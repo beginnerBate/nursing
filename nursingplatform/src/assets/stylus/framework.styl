@@ -1,0 +1,274 @@
+#app
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100vh
+#app>header,#app>footer
+   flex: 0 0 40px
+#app>.content
+  flex: 1
+  padding: 8px 16px
+  position: relative
+.app-header
+  display: flex
+  justify-content: space-between
+  min-height: 40px
+  // background: #45aee0
+  // color:#fff
+  padding: 0 20px
+.app-header-left
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 18px
+  letter-spacing: 1px
+.app-header-left>span>i
+  margin-right: 10px
+  font-size: 110%
+.app-header-left>span:first-child>span
+  font-size: 22px
+  font-weight:500
+.app-header-left>span
+  margin-right: 35px
+  cursor: pointer
+.app-header-right>span:first-child
+  margin-left: 6px
+.app-header-right>span
+  display: inline-block
+  border-radius: 5px
+  // background-color: #57b5e3
+  // border-color: #57b5e3
+  padding: 10px 18px
+  margin-bottom: 2px
+  cursor: pointer
+.app-header-right>span:hover
+  // background-color: #6ec2ea
+.app-header-right>span>i
+  // color:#d73d32
+  font-size:20px
+.app-header-right>span:last-child>i
+  // color: white
+/* footer */
+footer
+  box-shadow: 1px 1px 10px #45aee0
+  display: flex
+  justify-content: flex-end
+  align-items: center
+footer button
+  outline: none
+  appearance: none
+  border:none
+footer button.fa
+  display: inline-block
+  width: 60px
+  height: 40px
+  color: steelblue
+  line-height: 40px
+  font-size: 20px
+  text-align: center
+  margin-right: 15px
+  cursor: pointer
+  background: #ffffff
+  transition: background 0.2s ease
+footer button.fa:focus
+  background:rgba(173, 169, 150, 0.14)  /* fallback for old browsers */
+  transition: background 0.2s ease
+/* righttabstyle*/
+.right-tab
+  position: absolute
+  top:40px
+  bottom: 40px
+  transition: all 0.75s ease
+  width: 0
+  right:0
+  overflow: hidden
+  background-color: #fafafa
+  border-left: 1px solid #d4d4d4
+.right-tab[data-display='false'] 
+   /* display: none; */
+.right-tab[data-display='true']
+   width: 200px
+
+// ------------------------------------------------------this day components-------------------------------------------------------------------
+  .thisday
+      display: flex
+      height: 100%
+  .thisday-left
+      flex: 1
+      display: flex
+      flex-direction: column
+  .key-wrapper
+      flex: 0 0 40%
+      padding-bottom: 10px
+  .special-wrapper
+      flex: 0 0 60%
+ .thisday-right
+      flex: 0 0 16%
+      margin-left: 20px
+      position: relative
+  .thisdayrightwrapper
+      // box-shadow: 1px 1px 5px
+      height: 100%
+      overflow: hidden
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+  .thisday-right-content div
+      margin-bottom: 10px
+  // ------------------------------------thisday-left--keyproject----------------
+    .kp 
+      display: flex
+      width: 100%
+      height: 100%
+      flex-direction: column
+  .kpheader
+      flex: 0 0 14%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 0 16px
+      // color: #fff
+      font-size: 16px
+      font-weight: 600
+      letter-spacing: 3px
+      // text-shadow: 1px 1px 5px #45aee0
+      border-top-left-radius: 5px
+      border-top-right-radius:5px
+  .choose-row
+      display: flex
+  .choose-row li
+      padding: 0 12px
+  .kpcontent
+    flex: 1
+  .kpcontent-list
+      width: 100%
+      height: 100%
+      display:flex
+      flex-direction: column
+      padding-bottom:10px
+  .kpcontent-list li
+     flex: 0 0 20%
+     padding: 0 8px
+     //background-color: #fff
+     display: flex
+     justify-content: flex-start
+     align-items: center
+    // color:#333
+  .kpcontent-list li:nth-of-type(2n+1) 
+      // background-color: #e1e9e9
+  .kpcontent-list li span.name
+      padding: 6px 10px
+      display: inline-block
+      // background: #45aee0
+      // color:#fff
+      margin-right: 15px
+      /* flex: 0 0 70px; */
+      text-align: center
+      border-radius: 5px
+  .kpcontent-list li span.count i
+      // color:orange
+      padding-right: 50px
+  .kpcontent-list li span.mydata
+      padding: 0 15px
+  // .kpcontent-list li span.mydata i
+  //     color:#d73d32
+  .kpfooter
+      flex: 0 0 14%
+  .kpfooter ul 
+      display: flex
+      justify-content: center
+      text-align: center
+      align-items: center
+      height:100%
+  .kpfooter ul li 
+      flex: 1
+      // color:#666
+      height: 100%;
+      // background-color: #fff
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      cursor: pointer
+      font-weight: 600
+      letter-spacing: 4px
+      // box-shadow: 0px -1px 4px #e1e9e9
+  .kpfooter ul li span
+      vertical-align: -100%
+  //---------------------------------------- 
+  // .sp {
+  //     display: flex;
+  //     width: 100%;
+  //     height: 100%;
+  //     flex-direction: column;
+  //     box-shadow: 1px 1px 7px #d4d4d4
+  // }
+  .spheader
+      flex: 0 0 9%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 0 16px
+      // color: #fff;
+      font-size: 16px
+      font-weight: 600
+      letter-spacing: 3px
+      // text-shadow: 1px 1px 5px #45aee0;
+      border-top-left-radius: 5px
+      border-top-right-radius:5px
+  .choose-row
+      display: flex
+  .choose-row li
+      padding: 0 12px
+  .spcontent
+    flex: 0 0 91%
+    overflow: hidden
+    display: flex
+    position: relative
+  .spcontent-list-wrapper
+      flex: 1
+      margin-right: 6px
+      // box-shadow: 1px 1px 5px #fafafa
+      height: 100%
+      overflow: hidden
+      position: absolute
+      width: 50%
+      left: 0
+      top: 0
+  .spcontent-list-wrapper:last-child
+      left: 50%
+  .spcontent-list
+      width: 100%
+      padding-bottom:10px
+  .spcontent-list li
+     min-height: 40px
+     padding: 0 8px
+     display: flex
+     justify-content: flex-start
+     align-items: center
+  .spcontent-list li span.name
+      display: inline-block
+      margin-right: 15px
+      text-align: center
+      min-width: 70px
+  .spcontent-list li span.count i
+      padding-right: 50px
+  .spcontent-list li span.mydata
+      padding: 0 15px 
+  .spcontent
+      display: flex
+  .spcontent ul 
+      margin-right: 10px
+  .right-item
+      min-height: 150px
+  .right-item-head
+    display: flex
+    align-items: center
+    padding: 0 16px
+    font-size: 16px
+    font-weight: 600
+    letter-spacing: 3px
+    border-top-right-radius: 2px
+    border-top-left-radius: 2px
+    min-height: 46px
+  .right-item-content
+      padding: 6px

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="day">
+  <div id="app" :class="`theme-${tcolor}`">
     <header class="app-header">
       <div class="app-header-left">
         <span><i class="fa icon-icon1_nav"></i> <span>智能护理</span></span>
@@ -8,7 +8,7 @@
       </div>
       <div class="app-header-right">
         <span><i class="fa fa-power-off"></i></span>
-        <span><i class="fa fa-moon-o"></i></span>
+        <span @click="changeTheme()"><i class="fa fa-moon-o"></i></span>
       </div>
     </header>
     <div class="content">
@@ -35,6 +35,11 @@ export default {
       tabdisplay:false
     }
   },
+  computed: {
+    tcolor () {
+      return this.$store.state.themeType
+    }
+  },
   components:{
     tab
   },
@@ -49,6 +54,15 @@ export default {
        this.tabdisplay = false
      }
      console.log(this.tabdisplay)
+    },
+    changeTheme() {
+      var type = this.$store.state.themeType
+      if( type === 'day') {
+        type = 'night'
+      }else if (type === 'night') {
+        type = 'day'
+      }
+      this.$store.commit('setTheme', type)
     }
   },
   mounted () {
@@ -64,120 +78,7 @@ export default {
   
 }
 </script>
-<style>
-#app{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-}
-#app>header,#app>footer{
-   flex: 0 0 40px;
-}
-#app>.content{
-  flex: 1;
-  /* background:red; */
-  padding: 8px 16px;
-  position: relative;
-}
-.app-header{
-  display: flex;
-  justify-content: space-between;
-  min-height: 40px;
-  background: #45aee0;
-  color:#fff;
-  padding: 0 20px;
-}
-.app-header-left{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-.app-header-left>span>i{
-  margin-right: 10px;
-  font-size: 110%;
-}
-.app-header-left>span:first-child>span{
-  font-size: 22px;
-  font-weight:500;
-}
-.app-header-left>span{
-  margin-right: 35px;
-  cursor: pointer;
-}
-.app-header-right>span:first-child{
-  margin-left: 6px;
-}
-.app-header-right>span{
-  display: inline-block;
-  border-radius: 5px;
-  background-color: #57b5e3;
-  border-color: #57b5e3;
-  padding: 10px 18px;
-  margin-bottom: 2px;
-  cursor: pointer;
-}
-.app-header-right>span:hover{
-  background-color: #6ec2ea;
-}
-.app-header-right>span>i{
-  color:#d73d32;
-  font-size:20px;
-}
-.app-header-right>span:last-child>i{
-  color: white;
-}
-/* footer */
-footer{
-  box-shadow: 1px 1px 10px #45aee0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-footer button{
-  outline: none;
-  appearance: none;
-  border:none;
-
-}
-footer button.fa{
-  display: inline-block;
-  width: 60px;
-  height: 40px;
-  color: steelblue;
-  line-height: 40px;
-  font-size: 20px;
-  text-align: center;
-  margin-right: 15px;
-  cursor: pointer;
-  background: #ffffff;
-  transition: background 0.2s ease;
-}
-footer button.fa:focus{
-  background:rgba(173, 169, 150, 0.14);  /* fallback for old browsers */
-  transition: background 0.2s ease;
-}
-/* righttabstyle*/
-.right-tab{
-  position: absolute;
-  top:40px;
-  bottom: 40px;
-  transition: all 0.75s ease;
-  width: 0;
-  right:0;
-  overflow: hidden;
-  background-color: #fafafa;
-  border-left: 1px solid #d4d4d4;
-}
-.right-tab[data-display='false'] {
-   /* display: none; */
-    
-}
-.right-tab[data-display='true']{
-  /* display:block; */
-   width: 200px;
-}
+<style lang="stylus">
+  @import './assets/stylus/app.styl';
 </style>
 

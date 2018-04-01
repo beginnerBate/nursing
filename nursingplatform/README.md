@@ -50,6 +50,15 @@
 ```
   1. 弹出框组件搭建 alert.vue
 ```
+8. 白天和黑夜主题切换
+```
+  stylus 变量
+  大体思路:
+     布局一个单独提出一个css文件-----framework.css
+     主题一个单独出两个css文件 ------variable-day.css n-theme-day.css variable-night.css n-theme-night.css
+     本地存在localStorage里面存储主题变量
+     vuex 管理 主题状态切换
+```
 ## 页面搭建
 1. 今日概况---thisday  路由: thisday  
 ```
