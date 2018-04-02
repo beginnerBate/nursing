@@ -14,7 +14,7 @@
           <div class="spcontent-list-wrapper" ref='spcontentleftwrapper'>
           <ul class="spcontent-list" >
               <li v-for="(item, index) in items.data"  v-bind:key="index">
-                  <span class="name">{{item.name}}</span>
+                  <span class="name" @click="showAlert()">{{item.name}}</span>
                   <span class="count">总计： <i>{{item.data.length}}</i></span>
                   <span class= 'mydata' v-for="(itemchild,itemindex) in item.data" v-bind:key='itemindex'>
                       <i>{{itemchild.id}}</i> {{itemchild.name}}
@@ -111,41 +111,14 @@ export default {
                         {
                             name: 'BID',
                             data: [{id:47,name:'班'},{id:120,name:'曹'}]
-                        },
-                        // {
-                        //     name: 'TID',
-                        //     data: [{id:1,name:'班'},{id:12,name:'曹'},{id:47,name:'班'},{id:8,name:'曹'},{id:47,name:'班'},{id:50,name:'曹'},{id:47,name:'班'},{id:120,name:'曹'}]
-                        // },
-                        // {
-                        //     name: 'QID',
-                        //     data: [{id:417,name:'班'},{id:121,name:'曹'}]
-                        // },
-                        // {
-                        //     name: '持续性',
-                        //     data: [{id:417,name:'班'},{id:55,name:'曹'},{id:417,name:'班'},{id:121,name:'曹'},{id:417,name:'班'},{id:110,name:'曹'}]
-                        // },
-                        // {
-                        //     name: 'Qd',
-                        //     data: []
-                        // },
-                        // {
-                        //     name: 'BID',
-                        //     data: [{id:47,name:'班'},{id:120,name:'曹'}]
-                        // },
-                        // {
-                        //     name: 'TID',
-                        //     data: [{id:1,name:'班'},{id:12,name:'曹'},{id:47,name:'班'},{id:8,name:'曹'},{id:47,name:'班'},{id:50,name:'曹'},{id:47,name:'班'},{id:120,name:'曹'}]
-                        // },
-                        // {
-                        //     name: 'QID',
-                        //     data: [{id:417,name:'班'},{id:121,name:'曹'}]
-                        // },
-                        // {
-                        //     name: '持续性',
-                        //     data: [{id:417,name:'班'},{id:55,name:'曹'},{id:417,name:'班'},{id:121,name:'曹'},{id:417,name:'班'},{id:110,name:'曹'}]
-                        // }
+                        }
                   ]              
           }
+      }
+  },
+  methods: {
+      showAlert(event) {
+          this.$emit('showInfo')
       }
   },
   mounted () {

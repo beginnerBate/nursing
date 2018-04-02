@@ -4,7 +4,7 @@
       <div class="app-header-left">
         <span><i class="fa icon-icon1_nav"></i> <span>智能护理</span></span>
         <span>{{$store.state.headmenu}}</span>
-        <span>{{headText}}</span>
+        <span>{{$store.state.headText}}</span>
       </div>
       <div class="app-header-right">
         <span><i class="fa fa-power-off"></i></span>
@@ -20,18 +20,18 @@
     <div class="right-tab" ref="rightTab" v-bind:data-display="tabdisplay">
       <tab></tab>
     </div>
+    <login></login>
   </div>
 </template>
 
 <script>
 import tab from './components/tab/tab.vue'
 import Bscroll from 'better-scroll'
+import Login from 'components/login/login'
 export default {
   name: 'App',
   data () {
     return {
-      headText: '< 未登录 >',
-      // headmenu: '首页',
       tabdisplay:false
     }
   },
@@ -41,7 +41,8 @@ export default {
     }
   },
   components:{
-    tab
+    tab,
+    Login
   },
   created(){
     this.$store.commit('changeheadmenu','首页')

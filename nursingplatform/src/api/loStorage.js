@@ -1,9 +1,9 @@
 function setItem (name, value) {
-  localStorage.setItem(name, value)
+  sessionStorage.setItem(name, value)
 }
 
 function getItem (name, type) {
-  let res = localStorage.getItem(name)
+  let res = sessionStorage.getItem(name)
   if (res !== null) {
     if (!type) { // 为布尔值
       res = JSON.parse(res)
@@ -14,7 +14,7 @@ function getItem (name, type) {
 
 function initData (init) {
   for (let i = 0; i < init.length; i++) {
-    if (localStorage.getItem(init[i].name) === null) {
+    if (sessionStorage.getItem(init[i].name) === null) {
       setItem(init[i].name, init[i].value)
     }
   }

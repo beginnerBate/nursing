@@ -13,9 +13,9 @@
       <div class="kpcontent">
           <ul class="kpcontent-list" >
               <li v-for="(item, index) in items.data"  v-bind:key="index">
-                  <span class="name">{{item.name}}</span>
+                  <span class="name"  @click="showAlert()">{{item.name}}</span>
                   <span class="count">总计： <i>{{item.data.length}}</i></span>
-                  <span class= 'mydata' v-for="(itemchild,itemindex) in item.data" v-bind:key='itemindex'>
+                  <span class= 'mydata' v-for="(itemchild,itemindex) in item.data" v-bind:key='itemindex' @click="showDetial()">
                       <i>{{itemchild.id}}</i> {{itemchild.name}}
                       </span>
               </li>
@@ -170,6 +170,13 @@ export default {
                   that.projectName = item.getAttribute("data-name")
               }
           })
+      },
+      showAlert(event) {
+          this.$emit('showInfo')
+      },
+      showDetial(event) {
+          this.$emit('D')
+          console.log('showDetial')
       }
   },
   watch: {

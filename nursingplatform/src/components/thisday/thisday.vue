@@ -2,10 +2,10 @@
   <div class="thisday">
       <div class="thisday-left">
           <div class="key-wrapper">
-              <keyproject></keyproject>
+              <keyproject @showInfo='showInfo()' @D='ShowDetial()'></keyproject>
           </div>
           <div class="special-wrapper">
-              <specialproject></specialproject>
+              <specialproject @showInfo='showInfo()' @ShowDetial='ShowDetial()'></specialproject>
           </div>
       </div>
       <div class="thisday-right">
@@ -38,6 +38,8 @@
             </div>
           </div>
       </div>
+      <show-info :show='showing' @hide='hide()'></show-info>
+      <show-detial :show='showing' @hide='hide()'></show-detial>
   </div>
 </template>
 <script>
@@ -49,10 +51,32 @@ import worktips from 'components/worktips/worktips.vue'
 import itemsborrowed from 'components/itemsborrowed/itemsborrowed.vue'
 import changebedinfo from 'components/changebedinfo/changebedinfo.vue'
 import memo from 'components/memo/memo.vue'
+
+import ShowInfo from 'components/show-info/show-info'
+import ShowDetial from 'components/show-detial/show-detial'
 import Bscroll from 'better-scroll'
 export default {
+    data() {
+        return {
+            showing: false,
+            showingD:false
+        }
+    },
     created () {
         this.$store.commit('changeheadmenu','首页')
+    },
+    methods: {
+        hide() {
+            // console.log('嗯，收到了')
+            this.showing = false
+        },
+        showInfo() {
+            this.showing = true
+        },
+        ShowDetial() {
+            this.showing = true
+            console.log('showDetial','收到了')
+        }
     },
     components: {
         keyproject,
@@ -62,7 +86,9 @@ export default {
         worktips,
         itemsborrowed,
         changebedinfo,
-        memo
+        memo,
+        ShowInfo,
+        ShowDetial
     },
     mounted () {
         this.$nextTick(() => {

@@ -17,7 +17,7 @@
     })
 ```
 4. vue-axios的使用
-```
+```javascript
   1. 安装 npm install --save axios vue-axios
   2. 在main.js 里面引用 
       import Vue from 'vue'
@@ -27,7 +27,7 @@
       Vue.use(VueAxios, axios)
 ```
 5. 配置vuex 
-```
+```javascript
   1. 安装vuex npm install vuex --save
   2. 新建store文件夹 并且在文件夹里面新建一个store.js 并且在里面引入 vue 和vuex 
       ##  import Vue from 'vue'
@@ -46,9 +46,11 @@
 ```
 
 ```
-7. 基础组件搭建
+7. 基础组件搭建 4-2  <i style='color:green'>ok</i>
 ```
-  1. 弹出框组件搭建 alert.vue
+  1. 弹出框组件搭建 alert.vue [待优化------可移动 可伸缩 ]
+  2. 加载组件搭建 loading []
+
 ```
 8. 白天和黑夜主题切换
 ```
@@ -58,6 +60,11 @@
      主题一个单独出两个css文件 ------variable-day.css n-theme-day.css variable-night.css n-theme-night.css
      本地存在localStorage里面存储主题变量
      vuex 管理 主题状态切换
+```
+9. canvas画板实现 4-2 <i style='color:red'>ok</i>
+10. 登录退出流程实现 4-2  <i style='color:green'>ok</i>
+```
+   使用vuex保存登录状态 
 ```
 ## 页面搭建
 1. 今日概况---thisday  路由: thisday  
