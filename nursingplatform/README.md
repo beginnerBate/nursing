@@ -61,11 +61,17 @@
      本地存在localStorage里面存储主题变量
      vuex 管理 主题状态切换
 ```
-9. canvas画板实现 4-2 <i style='color:red'>ok</i>
+9. canvas画板实现 4-3 
+```
+  1. 页面搭建 √
+  2. 功能实现
+```
+
 10. 登录退出流程实现 4-2  <i style='color:green'>ok</i>
 ```
    使用vuex保存登录状态 
 ```
+11. 菜单隐藏
 ## 页面搭建
 1. 今日概况---thisday  路由: thisday  
 ```
