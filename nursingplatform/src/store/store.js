@@ -7,7 +7,7 @@ const init = [
     {name:'isLogin',value:''},
     {name:'themeType',value:'day'},
     {name:'headmenu',value:'首页'},
-    {name:'headText',value:'< 未登录 >'},
+    {name:'headText',value:'< 未登录 >'}
 ]
 loS.initData(init)
 Vue.use(Vuex)
@@ -16,6 +16,7 @@ const state = {
     themeType: loS.getItem('themeType', true),
     isLogin: loS.getItem('isLogin', true),
     headText: loS.getItem('headText', true),
+    tabdisplay: false
 }
 const mutations = {
     changeheadmenu (state, name) {
@@ -33,6 +34,9 @@ const mutations = {
     setLogin (state, code) {
         loS.setItem('isLogin', code)
         state.isLogin = loS.getItem('isLogin',true)
+    },
+    setTab (state, code) {
+        state.tabdisplay = code
     }
 }
 export default new Vuex.Store({

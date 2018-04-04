@@ -17,7 +17,7 @@
     <footer>
      <button class="fa fa-navicon " @click="displayTab()"></button>
     </footer>
-    <div class="right-tab" ref="rightTab" v-bind:data-display="tabdisplay">
+    <div class="right-tab" ref="rightTab" v-bind:data-display="$store.state.tabdisplay">
       <tab></tab>
     </div>
     <login></login>
@@ -30,9 +30,14 @@ import Bscroll from 'better-scroll'
 import Login from 'components/login/login'
 export default {
   name: 'App',
-  data () {
-    return {
-      tabdisplay:false
+  // data () {
+  //   return {
+  //     tabdisplay:false
+  //   }
+  // },
+  watch: {
+    $route() {
+      this.$store.commit('setTab',false)
     }
   },
   computed: {
@@ -49,12 +54,12 @@ export default {
   },
   methods: {
     displayTab() {
-     if(this.tabdisplay === false) {
-       this.tabdisplay = true
+     if(this.$store.state.tabdisplay === false) {
+       this.$store.commit('setTab',true)
      } else {
-       this.tabdisplay = false
+       this.$store.commit('setTab',false)
      }
-     console.log(this.tabdisplay)
+    //  console.log(this.tabdisplay)
     },
     changeTheme() {
       var type = this.$store.state.themeType

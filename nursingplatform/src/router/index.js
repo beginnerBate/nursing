@@ -38,7 +38,7 @@ const Ward = (resolve) => {
 }
 // 病区排班
 const Pb = (resolve) => {
-  import('components/Pb/Pb').then((module) =>{
+  import('components/pb/pb').then((module) =>{
     resolve(module)
   })
 }
@@ -88,7 +88,7 @@ export default new Router({
       component: Ward
     },
     {
-      path:'pb',
+      path:'/pb',
       component: Pb
     }
   ]
