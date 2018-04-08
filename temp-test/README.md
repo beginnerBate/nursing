@@ -13,6 +13,8 @@
   import 'babel-pollyfill'
 
 ```
+## git相关
+1. 创建分支 git branch test1
 
 ## Build Setup
 
