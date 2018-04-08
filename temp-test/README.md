@@ -1,6 +1,18 @@
 # temp-test
 
-> ''just a simple admin platform''
+> 'just a simple admin platform'
+## 基本架构
+1. 引入stylus 
+```npm
+  npm i stylus stylus-loader --save-dev
+```
+2. 安装 babel-polyfill 
+```javascript
+  npm i babel-polyfill --save
+  // 在main.js中
+  import 'babel-pollyfill'
+
+```
 
 ## Build Setup
 
